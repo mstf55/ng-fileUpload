@@ -1,0 +1,5 @@
+<div *ngIf="loading$ | async">
+    <app-table-paginated  *ngFor="let fl of files | async; index as i" [files]="fl.files" [type]="fl.type"></app-table-paginated>
+</div>
+
+

@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-content>
+    <mat-progress-bar [value]="progress | async"></mat-progress-bar>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="warn" (click)="file.click()">
+      <mat-icon>file_upload</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card><input type="file" (change)="upload($event)" #file id="file" name="file" style="display:none;" />
+<div class="alert" [className]="(isError$ | async )? 'alert-danger' : 'alert-success'" role="alert">
+  {{(message$ | async)}}
+</div>
